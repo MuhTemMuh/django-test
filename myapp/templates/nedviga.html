@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% extends "home.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block nedviga %}
+    <div style="background-color:#F0F0F0; display: flex; justify-content: center; align-items: center;">
+        <div style="background-color:white; width:80%">
+        <h1 style="font-family: Arial, sans-serif; width: 50%; margin-left: 20px">Цена на недвижимость в Алматы в состоянии стагнации</h1>
+        <img src="{% static 'media/N1.jpg' %}" alt="nedviga img" style="
+        width: 80%; 
+        height: 450px; 
+        border-radius:10px; margin-left: 15px;margin-bottom: 40px;">
+        <p style="font-family: Arial, sans-serif; width:80%; margin-left: 25px; margin-bottom: 40px;">
+        <br>
+            Рынок недвижимости в Алматы, некогда динамично развивающийся и привлекательный для инвесторов, переживает период стагнации. 
+            Цены на квартиры и дома за последние месяцы остаются на одном уровне, и эксперты прогнозируют, что эта тенденция сохранится в ближайшее время
+        <br>
+            Несмотря на стагнацию, эксперты отмечают, что рынок недвижимости Алматы сохраняет потенциал для восстановления. 
+            В будущем ожидается постепенное улучшение экономической ситуации, что приведет к росту спроса и, возможно, к увеличению цен на недвижимость. 
+            Пока же покупатели могут воспользоваться текущими условиями для приобретения жилья по сравнительно выгодным ценам.
+
+            В заключение можно сказать, что период стагнации цен на недвижимость в Алматы предоставляет как риски, так и возможности для различных участников рынка. 
+            Потенциальные покупатели могут рассмотреть этот период как удачное время для приобретения недвижимости, в то время как инвесторам стоит внимательно следить за экономическими трендами и быть готовыми к изменениям на рынке.
+        </p>
+        <img src="{% static 'media/N2.jpg' %}" alt="nedviga img" style="
+        width: 80%; 
+        height: 450px; 
+        border-radius:10px; margin-left: 15px">
+
+    {% endblock nedviga %}
+    
+    {% block c_content %}
+  
+    {% endblock c_content %}  
+</body>
+</html>

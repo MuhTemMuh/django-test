@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+
+
+    {% block header %}
+        <header>
+            <img src="{% static 'media/Logo2.jpeg' %}" alt="My Image">
+            <h2> MTM Redaction   Welcome to our News.Site</h2>
+
+            <h3>
+            {% for i in menu %}
+            <p>
+            {% if i == "О нас" %}
+                <a href="inform"> {{ i }} </a>
+            {% elif i == "Новости" %}
+                <a href="news"> {{ i }} </a>
+            {% elif i == "Новости дня" %}
+                <a href="news_today"> {{ i }} </a>
+            {% elif i == "Login" %}
+                <a href="Login"> {{ i }} </a>
+            {% else %}
+                {{ i }}
+            {% endif %}
+            </p>
+            {% endfor %}
+            </h3>
+        </header>
+    {% endblock header %}
+
+    <ul>
+        {% if selected == 0 %}
+	        <li class="selected">Все категории</li>
+		{% else %}
+		    <li class="selected"><a href="{% url 'index' %}">Все категории</a></li>
+		{% endif %}
+
+        {% for c in categ %}
+                {% if c.pk == selected %}
+                    <li class ="selected">{{c.name}}</li>
+                {% else %}
+                    <li ><a href="{{ c.get_absolute_url }}">{{c.name}}</a></li>
+                {% endif %}
+        {% endfor %}
+    </ul>
+
+    {% block c_content %}
+    <div class="c">
+        {% for post in all %}
+                {% if post.id == 1 %}
+                    <div class="corobka">
+                        <p>{{ post.title }} <br> {{ post.content }} <br> {{ post.time }}</p>
+                        <a href="{% url 'car' %}">
+                            <img src="{% static 'media/Car.png' %}" alt="Car img">
+                        </a>
+                    </div>
+                {% endif %}
+                {% if post.id == 2 %}
+                    <div class="corobka">
+                        <p>{{ post.title }} <br> {{ post.content }}  <br> {{ post.time }}</p>
+                        <a href="{% url 'merc' %}">
+                            <img src="{% static 'media/Merc.jpg' %}" alt="Car img">
+                        </a>
+                    </div>
+                {% endif %}
+                {% if post.id == 3 %}
+                    <div class="corobka">
+                        <p>{{ post.title }} <br> {{ post.content }} <br> {{ post.time }}</p>
+                        <a href="{% url 'nedviga' %}">
+                            <img src="{% static 'media/House.png' %}" alt="House img">
+                        </a>
+                    </div>
+                {% endif %}
+                {% if post.id == 4 %}
+                    <div class="corobka">
+                        <p>{{ post.title }} <br> {{ post.content }} <br> {{ post.time }}</p>
+                        <a href="{% url 'real' %}">
+                            <img src="{% static 'media/RB.webp' %}" alt="Football img">
+                        </a>
+                    </div>
+                {% endif %}
+        {% endfor %}
+    </div>
+    {% endblock c_content %}
+
+
+    
+    {% block footer %}
+        <footer>
+            <p>&copy; 2024 Ваш сайт. Все права защищены.</p>
+        </footer>
+    {% endblock footer %}
+
+    {% block new %}
+    {% endblock new %}
+
+    {% block news %}
+    {% endblock news %}
+
+    {% block inf %}
+    {% endblock inf %}
+
+    {% block porsche %}
+    {% endblock porsche %}
+
+    {% block merc %}
+    {% endblock merc %}
+
+    {% block nedviga %}
+    {% endblock nedviga %}
+
+    {% block real %}
+    {% endblock real %}
+
+    {% block content %}
+	{% endblock %}
+
+
+</body>
+</html>
+

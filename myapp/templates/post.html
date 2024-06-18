@@ -1,0 +1,20 @@
+{% extends "myapp/home.html" %}
+
+{% block content %}
+    <h2>{{ title }}</h2>
+    <div class="post">
+        <div class="article-panel">
+            <p class="first">Категория: {{ post.category.name }}</p>
+            <p class="last">Дата: {{ post.time_update }}</p>
+        </div>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.content | linebreaks }}</p>
+        <div class="clear"></div>
+        <p class="link-read-post"><a href="{{ post.get_absolute_url }}">Читать</a></p>
+    </div>
+    <ul>
+        {% for category in categ %}
+            <li><a href="{{ category.get_absolute_url }}">{{ category.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

@@ -1,0 +1,18 @@
+{% extends "home.html" %}
+{% load static %}
+
+{% block new %}
+<link rel="stylesheet" href="{% static 'css/news.css' %}">
+    <h1>Посты</h1>
+    <ul>
+        {% for i in posts %}
+            <li>{{i.title}} <br> {{i.content}} <br> {{i.time}} </li>
+        {% endfor %}
+    </ul>
+{% endblock new %}
+
+{% block c_content %}
+
+{% endblock c_content %}
+
+

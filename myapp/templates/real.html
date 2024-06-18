@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% extends "home.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                             
+        .h1{
+            font-family: Arial, sans-serif;
+            width: 30%;
+        }
+        .p{
+            font-family: Arial, sans-serif;
+            width:40%;
+        }
+        .p img{
+            width: 90%; 
+            height: 120px;
+            margin-left: 20px;  
+            border-radius: 20px;
+        }
+
+    </style>
+</head>
+<body style="background-color:grey">
+  {% block real %}
+  <div style="background-color:#F0F0F0; display: flex; justify-content: center; align-items: center;">
+    <div style="background-color:white; width:80%">
+        <h1 style="font-family: Arial, sans-serif; width: 50%; margin-left: 20px">Реал Мадрид одержал победу над Боруссией: Марко Ройс снова не чемпион </h1>
+        <img src="{% static 'media/realmad.jpg' %}" alt="football img" style="
+        width: 78%; 
+        height: 450px; 
+        border-radius:10px; margin-left: 15px">
+        <p style="font-family: Arial, sans-serif; width:60%; margin-left: 25px; margin-bottom: 40px;">
+        <br>
+        Вчера на стадионе "Сантьяго Бернабеу" состоялся захватывающий матч между мадридским Реалом и дортмундской Боруссией. 
+        Встреча завершилась победой испанского клуба со счетом 2:0. 
+        Эта игра вновь напомнила болельщикам о вечной борьбе и несбывшихся мечтах одного из лучших игроков Боруссии - Марко Ройса.
+        <br>
+        С первых минут матча было видно, что Реал Мадрид настроен решительно. 
+        Команда продемонстрировала высокую интенсивность и настойчивость в атакующих действиях. 
+        Первый гол не заставил себя долго ждать: уже на 22-й минуте Карим Бензема с точной передачи Винисиуса Жуниора отправил мяч в сетку ворот Боруссии. 
+        Защитники немецкой команды не успели среагировать на быструю комбинацию, что позволило Бенземе открыть счет.
+        </p>
+        <img src="{% static 'media/realmad2.jpg' %}" alt="football img" style="
+        width: 78%; 
+        height: 500px; 
+        border-radius: 10px; margin-left: 15px">
+    </div>
+  </div>
+  {% endblock real %}
+
+
+  {% block c_content %}
+  
+  {% endblock c_content %}     
+</body>
+</html>

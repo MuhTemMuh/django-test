@@ -1,0 +1,25 @@
+{% extends "home.html" %}
+
+  
+    {% block news %}
+    <h1 id="currentDate"></h1>
+
+    <script>
+         var today = new Date();
+
+        function addLeadingZero(number) {
+            return number < 10 ? '0' + number : number;
+        }
+
+        var formattedDate = addLeadingZero(today.getDate()) + '.' + addLeadingZero(today.getMonth() + 1 + '.' + today.getFullYear());
+
+        document.getElementById('currentDate').innerHTML = "Посты за " + formattedDate;
+    </script>
+    <ul>
+        {% for i in posts %}
+            <li>{{i.title}} <br> {{i.content}} <br> {{i.time_update}} </li>
+        {% endfor %}
+    </ul>
+    {% endblock news %}
+
+    {% block c_content %}{% endblock c_content %}

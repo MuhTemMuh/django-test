@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% extends "home.html" %}
+{% load static %}
+<html lang="en">
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    .h1{
+        font-family: Arial, sans-serif;
+        width: 30%;
+    }
+    .p{
+        font-family: Arial, sans-serif;
+        width:40%;
+    }
+    .p img{
+        width: 90%; 
+        height: 120px;
+        margin-left: 20px;  
+        border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  {% block merc %}
+  <div style="background-color:#F0F0F0; display: flex; justify-content: center; align-items: center;">
+        <div style="background-color:white; width:80%">
+        <h1 style="font-family: Arial, sans-serif; width: 50%; margin-left: 20px">Новый Mercedes Mythos: Революция в Мире Роскоши и Технологий</h1>
+        <p style="font-family: Arial, sans-serif; width:80%; margin-left: 25px; margin-bottom: 40px;">
+        <img src="{% static 'media/merct.jpg' %}" alt="mercedes img" style="
+        width: 80%; 
+        height: 450px; 
+        border-radius:10px; margin-left: 15px;margin-bottom: 40px;">
+        <br>
+        Автомобильный мир Казахстана готовится к важному событию – презентации нового Mercedes Mythos. 
+        Этот автомобиль, воплощающий совершенство инженерной мысли и непревзойденную роскошь, готов завоевать сердца автомобильных энтузиастов. 
+        Рассмотрим, чем примечателен этот новый шедевр от Mercedes и как его цена отражает исключительное качество и технологии.
+        </p>
+        <img src="{% static 'media/mercth.jpg' %}" alt="mercedes img" style="
+        width: 80%; 
+        height: 450px; 
+        border-radius:10px; margin-left: 15px">
+>
+  {% endblock merc %}
+
+
+  {% block c_content %}
+  
+  {% endblock c_content %}  
+</body> 
+</html>
